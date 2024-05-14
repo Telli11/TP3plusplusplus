@@ -1,0 +1,88 @@
+package models;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Seance {
+
+	private int id;
+	private String nom;
+	private LocalDate date;
+	private int capacite;
+	private List<Adherent> adherents=new ArrayList<Adherent>();
+	private Coach coach;
+	
+	public Seance(int id, String nom, LocalDate date, int capacite) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.date = date;
+		this.capacite = capacite;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public int getCapacite() {
+		return capacite;
+	}
+
+	public void setCapacite(int capacite) {
+		this.capacite = capacite;
+	}
+
+	
+	public List<Adherent> getAdherents() {
+		return adherents;
+	}
+
+	public void setAdherents(List<Adherent> adherents) {
+		this.adherents = adherents;
+	}
+	
+	public Coach getCoach() {
+		return coach;
+	}
+
+	public void setCoach(Coach coach) {
+		this.coach = coach;
+	}
+
+	@Override
+	public String toString() {
+		String resultat= "Seance [id=" + id + ", nom=" + nom + ", date=" + date + ", capacite=" + capacite + "]";
+		resultat+="\n ses adherents:";
+		for(Adherent a:adherents) {
+			resultat+="\n"+a.toString();
+		}
+		resultat+="\n le coach:";
+		resultat+="\n"+ coach.toString();
+		return resultat;
+	}
+	
+	
+	
+	
+}
